@@ -14,6 +14,7 @@ For example:
        nengo.Connection(ens_a, ens_b, solver=LstsqL2(solver=SVD()))
 """
 
+import autograd.scipy as scipy
 import autograd.numpy as np
 
 import nengo.utils.numpy as npext
@@ -80,10 +81,10 @@ class Cholesky(LeastSquaresSolver):
         np.fill_diagonal(G, G.diagonal() + m * sigma**2)
 
         try:
-            import autograd.scipy.linalg  # pylint: disable=import-outside-toplevel
+            import autograd.scipy.linalg as scipy_linalg  # pylint: disable=import-outside-toplevel
 
-            factor = scipy.linalg.cho_factor(G, overwrite_a=True)
-            X = scipy.linalg.cho_solve(factor, b)
+            factor = scipy_linalg.cho_factor(G, overwrite_a=True)
+            X = scipy_linalg.cho_solve(factor, b)
         except ImportError:
             L = np.linalg.cholesky(G)
             L = np.linalg.inv(L.T)
@@ -117,14 +118,12 @@ class ConjgradScipy(LeastSquaresSolver):
     def __init__(self, tol=1e-4, atol=1e-8):
         import autograd.scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
 
-        assert scipy.sparse.linalg
-
         super().__init__()
         self.tol = tol
         self.atol = atol
 
     def __call__(self, A, Y, sigma, rng=None):
-        import autograd.scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.sparse.linalg as scipy_sparse_linalg  # pylint: disable=import-outside-toplevel
 
         Y, m, n, d, matrix_in = format_system(A, Y)
 
@@ -133,7 +132,7 @@ class ConjgradScipy(LeastSquaresSolver):
         def calcAA(x):
             return np.dot(A.T, np.dot(A, x)) + damp * x
 
-        G = scipy.sparse.linalg.LinearOperator(
+        G = scipy_sparse_linalg.LinearOperator(
             (n, n), matvec=calcAA, matmat=calcAA, dtype=A.dtype
         )
         B = np.dot(A.T, Y)
@@ -142,7 +141,9 @@ class ConjgradScipy(LeastSquaresSolver):
         infos = np.zeros(d, dtype="int")
         itns = np.zeros(d, dtype="int")
 
-        scipy_version = tuple(int(part) for part in scipy.__version__.split(".")[:3])
+        scipy_version = tuple(
+            int(part) for part in scipy.__version__.split(".")[:3]
+        )
 
         for i in range(d):
             # use the callback to count the number of iterations
