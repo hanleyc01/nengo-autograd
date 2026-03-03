@@ -1,6 +1,6 @@
 """These are helper functions to simplify some operations in the SPA module."""
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo
 import nengo.utils.numpy as npext

@@ -8,7 +8,7 @@ Classes concerned with solving for decoders or full weight matrices.
 
 import time
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo.utils.least_squares_solvers as lstsq
 from nengo.params import BoolParam, FrozenObject, NdarrayParam, NumberParam, Parameter
@@ -452,13 +452,13 @@ class Nnls(Solver):
 
     def __init__(self, weights=False):
         # import here too to throw error early
-        import scipy.optimize  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.optimize  # pylint: disable=import-outside-toplevel
 
         assert scipy.optimize
         super().__init__(weights=weights)
 
     def __call__(self, A, Y, rng=np.random):
-        import scipy.optimize  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.optimize  # pylint: disable=import-outside-toplevel
 
         tstart = time.time()
         Y, _, n, _, matrix_in = format_system(A, Y)
@@ -493,7 +493,7 @@ class NnlsL2(Nnls):
         self.reg = reg
 
     def _solve(self, A, Y, sigma=0.0):
-        import scipy.optimize  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.optimize  # pylint: disable=import-outside-toplevel
 
         tstart = time.time()
         Y, _, n, _, matrix_in = format_system(A, Y)

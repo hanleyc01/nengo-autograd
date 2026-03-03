@@ -62,7 +62,7 @@ Commented lines show the default values for each setting.
 import logging
 from configparser import DEFAULTSECT, ConfigParser
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo.utils.paths
 

@@ -36,7 +36,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 from __future__ import absolute_import, division
 
-import numpy as np
+import autograd.numpy as np
 
 
 def isscalarlike(x):

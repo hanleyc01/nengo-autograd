@@ -1,7 +1,7 @@
 import warnings
 from copy import copy as std_copy
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo  # pylint: disable=cyclic-import
 from nengo.config import SupportDefaultsMixin

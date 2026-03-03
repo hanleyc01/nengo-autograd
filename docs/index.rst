@@ -11,7 +11,7 @@ with sensible defaults in a few lines of code:
 .. testcode::
 
    import nengo
-   import numpy as np
+   import autograd.numpy as np
    import matplotlib.pyplot as plt
 
    with nengo.Network() as net:

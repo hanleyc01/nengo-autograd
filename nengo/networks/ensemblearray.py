@@ -1,6 +1,6 @@
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.connection import Connection
 from nengo.dists import Samples

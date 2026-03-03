@@ -1,7 +1,7 @@
 import warnings
 from collections import defaultdict
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.builder.operator import TimeUpdate
 from nengo.builder.signal import Signal, SignalDict

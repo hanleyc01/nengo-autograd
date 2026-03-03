@@ -6,7 +6,7 @@ TODO:
 
 import logging
 
-import numpy as np
+import autograd.numpy as np
 import pytest
 
 import nengo

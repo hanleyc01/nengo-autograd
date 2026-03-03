@@ -1,6 +1,6 @@
 """Helper functions for constructing nengo models that implement actions."""
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo
 

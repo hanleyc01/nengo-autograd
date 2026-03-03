@@ -5,7 +5,7 @@ import warnings
 from collections import defaultdict, namedtuple
 from itertools import zip_longest
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.builder.neurons import SimNeurons
 from nengo.builder.operator import (

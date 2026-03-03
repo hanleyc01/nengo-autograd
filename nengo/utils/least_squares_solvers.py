@@ -14,7 +14,7 @@ For example:
        nengo.Connection(ens_a, ens_b, solver=LstsqL2(solver=SVD()))
 """
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo.utils.numpy as npext
 from nengo.exceptions import ValidationError
@@ -80,7 +80,7 @@ class Cholesky(LeastSquaresSolver):
         np.fill_diagonal(G, G.diagonal() + m * sigma**2)
 
         try:
-            import scipy.linalg  # pylint: disable=import-outside-toplevel
+            import autograd.scipy.linalg  # pylint: disable=import-outside-toplevel
 
             factor = scipy.linalg.cho_factor(G, overwrite_a=True)
             X = scipy.linalg.cho_solve(factor, b)
@@ -115,7 +115,7 @@ class ConjgradScipy(LeastSquaresSolver):
     atol = NumberParam("atol", low=0)
 
     def __init__(self, tol=1e-4, atol=1e-8):
-        import scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
 
         assert scipy.sparse.linalg
 
@@ -124,7 +124,7 @@ class ConjgradScipy(LeastSquaresSolver):
         self.atol = atol
 
     def __call__(self, A, Y, sigma, rng=None):
-        import scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
 
         Y, m, n, d, matrix_in = format_system(A, Y)
 
@@ -172,7 +172,7 @@ class LSMRScipy(LeastSquaresSolver):
     tol = NumberParam("tol", low=0)
 
     def __init__(self, tol=1e-4):
-        import scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
 
         assert scipy.sparse.linalg
 
@@ -180,7 +180,7 @@ class LSMRScipy(LeastSquaresSolver):
         self.tol = tol
 
     def __call__(self, A, Y, sigma, rng=None):
-        import scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.sparse.linalg  # pylint: disable=import-outside-toplevel
 
         Y, m, n, d, matrix_in = format_system(A, Y)
 

@@ -38,7 +38,7 @@ from __future__ import absolute_import, division
 
 import math
 
-import numpy as np
+import autograd.numpy as np
 
 from ..special import comb
 from .linalg_interface import LinearOperator

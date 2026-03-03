@@ -38,7 +38,7 @@ import os
 import pickle
 import struct
 
-import numpy as np
+import autograd.numpy as np
 
 from ..exceptions import CacheIOError
 from .cache import byte_align

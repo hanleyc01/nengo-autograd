@@ -38,7 +38,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 from numpy import (
     allclose,
     array,

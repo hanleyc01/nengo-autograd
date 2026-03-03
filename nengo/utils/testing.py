@@ -2,7 +2,7 @@ import itertools
 import sys
 import threading
 
-import numpy as np
+import autograd.numpy as np
 
 
 def signals_allclose(  # noqa: C901

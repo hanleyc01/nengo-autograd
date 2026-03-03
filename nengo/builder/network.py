@@ -1,7 +1,7 @@
 import contextlib
 import logging
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo.utils.numpy as npext
 from nengo.builder.builder import Builder

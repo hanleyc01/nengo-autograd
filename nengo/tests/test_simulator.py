@@ -1,7 +1,7 @@
 import logging
 import pickle
 
-import numpy as np
+import autograd.numpy as np
 import pkg_resources
 import pytest
 

@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 
 import nengo
 import nengo.spa.action_build

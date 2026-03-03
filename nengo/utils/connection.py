@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 
 
 def eval_point_decoding(conn, sim, eval_points=None):

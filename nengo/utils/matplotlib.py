@@ -2,7 +2,7 @@ import warnings
 
 import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
+import autograd.numpy as np
 
 try:
     from cycler import cycler  # Dependency of MPL form 1.5.0 onward

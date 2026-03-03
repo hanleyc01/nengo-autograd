@@ -1,6 +1,6 @@
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.base import NengoObject, NengoObjectParam, ObjView
 from nengo.dists import DistOrArrayParam, Distribution

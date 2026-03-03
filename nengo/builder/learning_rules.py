@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 
 from nengo.builder.builder import Builder
 from nengo.builder.connection import slice_signal

@@ -11,7 +11,7 @@ import warnings
 from subprocess import CalledProcessError
 from uuid import uuid1
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.dists import (
     PDF,

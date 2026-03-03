@@ -1,6 +1,6 @@
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.exceptions import SpaModuleError
 from nengo.network import Network

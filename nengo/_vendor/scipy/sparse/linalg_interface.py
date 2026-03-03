@@ -36,7 +36,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 from __future__ import absolute_import, division
 
-import numpy as np
+import autograd.numpy as np
 
 from .sputils import isintlike, isshape
 
@@ -105,7 +105,7 @@ class LinearOperator(object):
 
     Examples
     --------
-    >>> import numpy as np
+    >>> import autograd.numpy as np
     >>> from scipy.sparse.linalg import LinearOperator
     >>> def mv(v):
     ...     return np.array([2*v[0], 3*v[1]])

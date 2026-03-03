@@ -1,6 +1,6 @@
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.base import Process
 from nengo.dists import DistributionParam, Gaussian
@@ -431,7 +431,7 @@ class Piecewise(Process):
                 interpolation = "zero"
             else:
                 try:
-                    import scipy.interpolate  # pylint: disable=import-outside-toplevel
+                    import autograd.scipy.interpolate  # pylint: disable=import-outside-toplevel
 
                     self.sp_interpolate = scipy.interpolate
                 except ImportError:

@@ -1,7 +1,7 @@
 import inspect
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo.utils.numpy as npext
 from nengo.base import NengoObject, ObjView

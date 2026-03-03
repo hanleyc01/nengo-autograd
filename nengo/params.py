@@ -3,7 +3,7 @@
 import inspect
 from collections import namedtuple
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.exceptions import ConfigError, ObsoleteError, ReadonlyError, ValidationError
 from nengo.rc import rc

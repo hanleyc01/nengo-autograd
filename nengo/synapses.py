@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 
 from nengo.base import Process
 from nengo.exceptions import ValidationError

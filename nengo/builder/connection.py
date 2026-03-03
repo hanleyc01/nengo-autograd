@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.builder.builder import Builder
 from nengo.builder.ensemble import gen_eval_points, get_activities

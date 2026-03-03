@@ -1,6 +1,6 @@
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 
 import nengo.utils.numpy as npext
 from nengo.exceptions import ConvergenceError, ValidationError
@@ -511,7 +511,7 @@ class ScatteredHypersphere(Distribution):
         self.method = method
 
         if self.method == "sct":
-            import scipy.special  # pylint: disable=import-outside-toplevel
+            import autograd.scipy.special  # pylint: disable=import-outside-toplevel
 
             assert scipy.special
 
@@ -521,7 +521,7 @@ class ScatteredHypersphere(Distribution):
         if approx:
             z_sq = _betaincinv22.lookup(dims, 2 * y_reflect)
         else:
-            import scipy.special  # pylint: disable=import-outside-toplevel
+            import autograd.scipy.special  # pylint: disable=import-outside-toplevel
 
             z_sq = scipy.special.betaincinv(dims / 2.0, 0.5, 2 * y_reflect)
         x = np.arcsin(np.sqrt(z_sq)) / np.pi
@@ -970,7 +970,7 @@ class _betaincinv22:
     @classmethod
     def make_table(cls, n_interp=200, n_dims=50):
         """Save lookup table for ``_betaincinv22.lookup``."""
-        import scipy.special  # pylint: disable=import-outside-toplevel
+        import autograd.scipy.special  # pylint: disable=import-outside-toplevel
 
         rng = np.random.RandomState(0)
 

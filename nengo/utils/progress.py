@@ -11,7 +11,7 @@ from datetime import timedelta
 from html import escape
 from shutil import get_terminal_size
 
-import numpy as np
+import autograd.numpy as np
 
 from ..exceptions import ValidationError
 from ..rc import rc

@@ -1,6 +1,6 @@
 import warnings
 
-import numpy as np
+import autograd.numpy as np
 
 from nengo.dists import Choice, Distribution, Uniform, get_samples
 from nengo.exceptions import SimulationError, ValidationError

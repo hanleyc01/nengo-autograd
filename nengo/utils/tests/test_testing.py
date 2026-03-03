@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 import pytest
 
 from nengo.utils.testing import ThreadedAssertion, signals_allclose

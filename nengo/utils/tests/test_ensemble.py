@@ -1,5 +1,5 @@
 import mpl_toolkits.mplot3d
-import numpy as np
+import autograd.numpy as np
 import pytest
 
 import nengo

@@ -4,20 +4,20 @@ import logging
 import warnings
 from collections.abc import Iterable
 
-import numpy as np
+import autograd.numpy as np
 
 from ..exceptions import ValidationError
 
 logger = logging.getLogger(__name__)
 try:
-    import scipy.sparse as scipy_sparse
+    import autograd.scipy.sparse as scipy_sparse
 
     def is_spmatrix(obj):
         """Check if ``obj`` is a sparse matrix."""
         return isinstance(obj, scipy_sparse.spmatrix)
 
 except ImportError as e:
-    logger.info("Could not import scipy.sparse:\n%s", str(e))
+    logger.info("Could not import autograd.scipy.sparse:\n%s", str(e))
     scipy_sparse = None
 
     def is_spmatrix(obj):
