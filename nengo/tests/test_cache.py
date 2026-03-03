@@ -9,7 +9,7 @@ from subprocess import CalledProcessError
 
 import autograd.numpy as np
 import pytest
-from numpy.testing import assert_equal
+from autograd.numpy.testing import assert_equal
 
 import nengo
 import nengo.neurons

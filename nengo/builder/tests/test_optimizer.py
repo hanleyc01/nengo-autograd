@@ -1,6 +1,6 @@
 import autograd.numpy as np
 import pytest
-from numpy.testing import assert_almost_equal
+from autograd.numpy.testing import assert_almost_equal
 
 import nengo
 from nengo.builder.neurons import SimNeurons

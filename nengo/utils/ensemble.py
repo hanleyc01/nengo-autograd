@@ -1,6 +1,6 @@
 import autograd.numpy as np
 
-from . import autograd.numpy as npext  # pylint: disable = reimported
+from . import numpy as npext  # pylint: disable = reimported
 
 
 def tuning_curves(ens, sim, inputs=None):
