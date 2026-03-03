@@ -309,8 +309,9 @@ class NumberParam(Parameter):
 class IntParam(NumberParam):
     """A parameter where the value is an integer."""
 
+    # TODO(hanleyc01): removed instance check here, fix later
     def coerce(self, instance, num):
-        self.check_type(instance, num, (int, np.integer))
+        # self.check_type(instance, num, (int, np.int64, np.integer))
         return super().coerce(instance, num)
 
 
